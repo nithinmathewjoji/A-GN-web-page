@@ -1,0 +1,51 @@
+body {
+
+    
+    #video-background {
+      position:absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1; /* Place the video behind other content */
+      overflow: hidden; /* Hide overflow content */
+
+    }
+   
+
+  
+}
+
+.highlighted-word
+{
+  color: red;
+}
+
+.content1
+{
+  color: white;
+  text-align: center;
+  padding-top: 50px;
+}
+#head1
+{
+  padding-top: 50px;
+}
+
+#doc-link
+{
+  border: 2px solid red;
+  border-radius: 12px;
+  padding: 5px;
+  color: white;
+  
+}
+
+
+#landing-img {
+    text-align: center;
+    color: white;
+    padding-top: 10px;
+}
+
+

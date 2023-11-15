@@ -1,0 +1,60 @@
+body
+{
+    background-image: url(contact.png);
+    background-attachment: fixed;
+    background-size: 100%;
+    background-size: cover;
+}
+
+.head
+{
+    text-align: center;
+    color: white;
+    padding-top:100px;
+}
+
+.contact-cards {
+    display: flex;
+    justify-content: space-around;
+    padding-top: 15%;
+  
+  }
+  
+  .contact-card {
+    text-align: center;
+    padding: 15px;
+    color: white;
+  }
+  
+  .contact-card img {
+    width: 200px;
+    height: auto;
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+     display: block; 
+    
+  }
+  
+  .contact-card h3 {
+    margin: 10px 0;
+  }
+  
+  .contact-card :hover
+  {
+    transform: scale(1.05);
+  }
+  
+  #link-contact
+  {
+    color: white;
+    border: 1px solid;
+    border-radius: 1cm;
+    background-color: black;
+    transition: background-color 0.3s;
+
+  }
+  #link-contact:hover
+  {
+    background-color: #0074d9;
+    
+  }

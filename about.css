@@ -1,0 +1,101 @@
+body {
+  background-image: url('background.jpg'); /* Replace 'background-image.jpg' with your image file path */
+  background-size: cover; /* Adjust the background size as needed */
+  background-repeat: no-repeat; /* Prevent the background from repeating */
+  background-attachment: fixed; /* Fixed background image */
+}
+
+.about
+{
+  text-align: center;
+  color: white;
+  padding-top: 10px;
+}
+
+.content
+{
+  text-align: center;
+  color: white;
+}
+.highlighted-word
+{
+  color: red;
+}
+
+.gallery
+{
+    padding-left: 30%;
+    
+}
+
+.gallery{
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+}
+
+.gallery img {
+  
+    transition: transform 0.3s ease;
+    height: auto;
+    display: block;  
+}
+
+.gallery:hover img {
+  transform: scale(1.05); /* You can adjust the scale factor */
+}
+
+.desc
+{
+  color: white;
+  text-align: center;
+}
+
+.contact-details
+{
+  text-align: center;
+  color: white;
+}
+
+.highlighted-word
+{
+  color: red;
+}
+
+.contact-cards {
+  display: flex;
+  justify-content: space-around;
+  border: 5px solid;
+  border-color: white;
+
+}
+
+.contact-card {
+  text-align: center;
+  padding: 15px;
+  color: white;
+}
+
+#align-AMAL
+{
+  padding-left: 10%;
+}
+
+.contact-card img {
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+   display: block; 
+  
+}
+
+.contact-card  {
+  margin: 10px 0;
+}
+
+.contact-card :hover
+{
+  transform: scale(1.05);
+}
+
