@@ -4,7 +4,7 @@
     if (window.innerWidth <= 500) 
     {
       // Redirect to another page
-      //window.location.href = "warning.html";
+      window.location.href = "warning.html";
     }
     else{
         
