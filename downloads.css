@@ -14,6 +14,11 @@ body {
     margin: 20px;
 }
 
+.highlighted-word
+{
+  color: red;
+}
+
 .grid-item {
     text-align: center;
 }
