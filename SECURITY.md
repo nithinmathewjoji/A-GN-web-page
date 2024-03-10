@@ -2,20 +2,17 @@
 
 ## Supported Versions
 
-Use this section to tell people about which versions of your project are
-currently being supported with security updates.
+The entire project is bound to our security policy and everything included in the project is open source and yes images and videos included and subjected to copyrights based on prior concent 
 
-| Version | Supported          |
-| ------- | ------------------ |
-| 5.1.x   | :white_check_mark: |
-| 5.0.x   | :x:                |
-| 4.0.x   | :white_check_mark: |
-| < 4.0   | :x:                |
+| code section                            | Supported          |
+| --------------------------------------- | ------------------ |
+| download page                           | :white_check_mark: |
+| source code to pages except downloads   | :x:                |
+
 
 ## Reporting a Vulnerability
 
-Use this section to tell people how to report a vulnerability.
+Please report the potential vulnerability via the contact mail provided 
+the updates are frequent (monthly) and if any reported issues it will be rectified soon
 
-Tell them where to go, how often they can expect to get an update on a
-reported vulnerability, what to expect if the vulnerability is accepted or
-declined, etc.
+contact mail : nithinmathewjoji@gmail.com
