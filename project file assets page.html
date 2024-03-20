@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Multiple File Download</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        background-color: #f1f1f1;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 100vh;
+    }
+    .container {
+        max-width: 600px;
+        padding: 20px;
+        border-radius: 10px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+    .container h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        color: #333;
+    }
+    .file-list {
+        list-style-type: none;
+        padding: 0;
+    }
+    .file-list li {
+        margin-bottom: 10px;
+    }
+    .download-btn {
+        background-color: #4CAF50;
+        color: white;
+        padding: 10px 20px;
+        text-align: center;
+        text-decoration: none;
+        display: inline-block;
+        border-radius: 5px;
+        transition: background-color 0.3s;
+        cursor: pointer;
+        display: block;
+        margin: 20px auto;
+    }
+    .download-btn:hover {
+        background-color: #45a049;
+    }
+    .error-message {
+        color: #ff0000;
+        text-align: center;
+        margin-top: 10px;
+    }
+</style>
+</head>
+<body>
+    
+<div class="container">
+    <h2>Select files to download:</h2>
+    <ul class="file-list">
+        <li><input type="checkbox" id="file1" name="file1"><label for="file1">Foot print</label></li>
+        <li><input type="checkbox" id="file2" name="file2"><label for="file2">gerber files + 3d files</label></li>
+        <li><input type="checkbox" id="file3" name="file3"><label for="file3">gerber files</label></li>
+        <li><input type="checkbox" id="file4" name="file4"><label for="file4">kicad files</label></li>
+        <li><input type="checkbox" id="file5" name="file5"><label for="file5">doc</label></li>
+        <li><input type="checkbox" id="file6" name="file6"><label for="file6">project backup</label></li>
+        <li><input type="checkbox" id="file7" name="file7"><label for="file7">3d files</label></li>
+        <li><input type="checkbox" id="file8" name="file8"><label for="file8">schematics and data sheets</label></li>
+        <li><input type="checkbox" id="file9" name="file9"><label for="file9">ups schematic</label></li>
+        <li><input type="checkbox" id="file10" name="file10"><label for="file10">ZVS circuit diagram</label></li>
+        <!-- Add more checkboxes for additional files -->
+    </ul>
+    <button class="download-btn" onclick="downloadSelectedFiles()">Download Selected Files</button>
+    <div id="errorMessage" class="error-message"></div>
+</div>
+
+<script>
+    function downloadSelectedFiles() {
+        const checkboxes = document.querySelectorAll('input[type="checkbox"]:checked');
+        const errorMessage = document.getElementById("errorMessage");
+        if (checkboxes.length === 0) {
+            errorMessage.textContent = "Please select at least one file to download.";
+            return;
+        }
+
+        // Define the file names and URLs of the files
+        const files = [
+        { name: "file1", url: "file1.zip" },
+        { name: "file2", url: "file2.zip" },
+        { name: "file3", url: "file3.zip" },
+        { name: "file4", url: "file4.zip" },
+        { name: "file5", url: "file5.docx" },
+        { name: "file6", url: "file6.zip" },
+        { name: "file7", url: "file11.zip" },
+        { name: "file8", url: "file8.zip" },
+        { name: "file9", url: "file9.pdf" },
+        { name: "file10", url: "file10.jpg" },
+            // Add more files as needed
+        ];
+
+        // Loop through each selected checkbox and initiate the download of the corresponding file
+        checkboxes.forEach((checkbox) => {
+            const fileId = checkbox.id;
+            const file = files.find((f) => f.name === fileId);
+            if (file) {
+                const link = document.createElement("a");
+                link.href = file.url;
+                link.download = file.name;
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+            }
+        });
+
+        // Clear error message
+        errorMessage.textContent = "";
+    }
+</script>
+</body>
+</html>
