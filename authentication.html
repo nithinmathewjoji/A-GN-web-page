@@ -1,85 +1,103 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Protected Download Page</title>
-<style>
-    body {
-        font-family: Arial, sans-serif;
-        background-color: #f1f1f1;
-        margin: 0;
-        padding: 0;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        height: 100vh;
-    }
-    .container {
-        max-width: 400px;
-        padding: 20px;
-        border-radius: 10px;
-        background-color: #fff;
-        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    }
-    .container h2 {
-        text-align: center;
-        margin-bottom: 20px;
-        color: #333;
-    }
-    .pin-input {
-        width: calc(100% - 40px);
-        padding: 10px;
-        margin-bottom: 20px;
-        border: 1px solid #ccc;
-        border-radius: 5px;
-        font-size: 16px;
-        outline: none;
-    }
-    .download-btn {
-        background-color: #4CAF50;
-        color: white;
-        padding: 10px 0;
-        text-align: center;
-        text-decoration: none;
-        display: block;
-        width: 100%;
-        border: none;
-        border-radius: 5px;
-        cursor: pointer;
-        transition: background-color 0.3s;
-    }
-    .download-btn:hover {
-        background-color: #45a049;
-    }
-    .error-message {
-        color: #ff0000;
-        text-align: center;
-        margin-top: 10px;
-    }
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+
+        .highlighted-word
+         {
+        color: red;
+        }
+
+        .container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+        input[type="text"], input[type="password"] {
+            width: 250px;
+            padding: 10px;
+            margin: 10px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        input[type="submit"] {
+            background-color: #4CAF50;
+            color: white;
+            padding: 14px 20px;
+            margin: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+    </style>
 </head>
 <body>
+
 <div class="container">
-    <h2>Enter PIN to access the download page</h2>
-    <input type="password" id="pinInput" class="pin-input" placeholder="Enter PIN">
-    <button class="download-btn" onclick="checkPin()">Submit</button>
-    <div id="errorMessage" class="error-message"></div>
+    <h2>Enter <span class="highlighted-word">PIN</span> to access the <span class="highlighted-word">Assets</span> download page</h2>
+    <form id="loginForm" onsubmit="return loginUser()">
+        <input type="text" id="username" placeholder="Enter Username" required><br>
+        <input type="password" id="password" placeholder="Enter Password" required><br>
+        <input type="submit" value="Login">
+    </form>
+    <p id="message"></p>
 </div>
 
 <script>
-    const correctPin = "1234"; // Change this to your desired PIN
+    function loginUser() {
+        var username = document.getElementById("username").value;
+        var password = document.getElementById("password").value;
 
-    function checkPin() {
-        const pinInput = document.getElementById("pinInput").value;
-        const errorMessage = document.getElementById("errorMessage");
+        // Define user IDs and passwords
+        var users = [
+            { username: "nithin", password: "nithin@amptech" },
+            { username: "amal", password: "amal@amptech" },
+            { username: "govind", password: "govind@amptech" },
+            { username: "ashwin", password: "ashwin@amptech" }
+        ];
 
-        if (pinInput === correctPin) {
+        var authenticated = false;
+        // Check if the provided username and password match any user in the users array
+        for (var i = 0; i < users.length; i++) {
+            if (username === users[i].username && password === users[i].password) {
+                authenticated = true;
+                break;
+            }
+        }
+
+        // Display appropriate message based on authentication status
+        if (authenticated) {
             window.location.href = "project file assets page.html"; // Redirect to the download page if PIN is correct
         } else {
-            errorMessage.textContent = "Incorrect PIN. Please try again.";
+            document.getElementById("message").innerText = "Invalid username or password.";
         }
+
+        // Prevent form submission
+        return false;
     }
 </script>
+
 </body>
 </html>
+
+
+
